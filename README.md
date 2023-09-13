@@ -30,6 +30,13 @@ Normal maven build will run the tests. To run only tests without building:
 ````
 mvn test
 ````
+To see the result of the test (pass/fail), immediately after previous command, in Linux command line type:
+````
+echo $?
+````
+This should print out 0, if tests passed and 1, if tests failed (or some other value greater than 0).
+This return value can be used in CI/CD pipeline to stop the process in case of errors in unit test phase.
+
 Building without running the tests:
 ````
 mvn package -DskipTests=true
